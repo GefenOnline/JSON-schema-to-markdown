@@ -4,6 +4,6 @@ This schema is awesome.
 
 The schema defines the following properties:
 
-## `price` (number)
+- `price` (number)
 
 Cost of the product.

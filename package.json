@@ -4,7 +4,7 @@
   "description": "Turn a JSON Schema into a markdown file.",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,12 @@
   },
   "homepage": "https://github.com/saibotsivad/json-schema-to-markdown",
   "devDependencies": {
-    "is-my-json-valid": "^2.13.1",
-    "tape": "^4.0.0"
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "is-my-json-valid": "^2.13.1"
+  },
+  "dependencies": {
+    "jest": "^22.0.5"
   }
 }
