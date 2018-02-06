@@ -5,7 +5,7 @@ const getActualType = require('./getActualType');
 function getPrefixByDepth(depth) {
     let res = '';
     for(let i = 0; i < depth; i++) {
-        res += '  ';
+        res += ' ';
     }
     return res;
 }
@@ -28,16 +28,14 @@ function generateSchemaSectionText(
     isRequired, schema, subSchemas,
 ) {
     const schemaType = getActualType(schema, subSchemas);
-
+    const firstline = (`${generateElementTitle(prefix, name, schemaType, isRequired, schema.enum, schema.example)}`).concat(schema.description ?  ` - ${schema.description}` : '');
     let text = [
-        generateElementTitle(prefix, name, schemaType, isRequired, schema.enum, schema.example),
-        schema.description,
+        firstline
     ];
 
     if (schemaType === 'object') {
         if (schema.properties) {
-            text.push(`Properties of the \`${name}\` object:`);
-            generatePropertySection(depth + 1, prefix, schema, subSchemas)
+            generatePropertySection(depth + 1, schema, subSchemas)
                 .forEach((section) => {
                     text = text.concat(section);
                 });
