@@ -10,7 +10,7 @@ are also very welcome.
 
 # using
 
-Install the normal way: `npm install json-schema-to-markdown`
+Install the normal way: `npm install json-schema-2-md`
 
 Use it like this:
 
