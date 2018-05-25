@@ -92,7 +92,7 @@ function generateSchemaSectionText(
 
     if (schema.enum) {
         text.push('This element must be one of the following enum values:');
-        text.push(schema.enum.map(enumItem => `  * \`${enumItem}\``).join('\n'));
+        text.push(schema.enum.map(enumItem => `${getPrefixByDepth(depth + 1)}- \`${enumItem}\``).join('\n'));
     }
 
     if (schema.default !== undefined) {

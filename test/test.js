@@ -23,5 +23,5 @@ test( 'Example Object', () => {
 });
 
 test( 'Simple Object (1 Depth)', () => {
-    testFiles('websiteSchema');
+    testFiles('enums');
 });
