@@ -1,6 +1,6 @@
 {
-  "name": "json-to-md",
-  "version": "0.0.1",
+  "name": "json-schema-2-md",
+  "version": "0.0.5",
   "description": "Turn a JSON Schema into a markdown file.",
   "main": "index.js",
   "scripts": {
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/roeeyud/JSON-schema-to-markdown"
+    "url": "https://github.com/roeeyud/JSON-schema-to-markdown.git"
   },
   "keywords": [
     "json-schema",
     "markdown"
   ],
-  "author": "roeeyud",
+  "author": "adarlocker",
   "license": "VOL",
   "bugs": {
     "url": "https://github.com/roeeyud/JSON-schema-to-markdown/issues"
@@ -24,9 +24,7 @@
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "is-my-json-valid": "^2.13.1"
-  },
-  "dependencies": {
-    "jest": "^22.0.5"
+    "is-my-json-valid": "^2.13.1",
+    "jest": "^20.0.4"
   }
 }

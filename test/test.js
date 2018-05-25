@@ -21,3 +21,7 @@ test( 'Deep Object', () => {
 test( 'Example Object', () => {
 	testFiles('example');
 });
+
+test( 'Simple Object (1 Depth)', () => {
+    testFiles('websiteSchema');
+});
