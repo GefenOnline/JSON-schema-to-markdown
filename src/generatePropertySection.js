@@ -81,7 +81,7 @@ function generateSchemaSectionText(
 
         if (itemsType === 'object') {
             text.push('The array object has the following properties:');
-            generatePropertySection(depth + 1, prefix, schema.items, subSchemas).forEach((section) => {
+            generatePropertySection(depth + 1, schema.items, subSchemas).forEach((section) => {
                 text = text.concat(section);
             });
         }
