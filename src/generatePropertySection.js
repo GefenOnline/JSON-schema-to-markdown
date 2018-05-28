@@ -43,7 +43,7 @@ function generateSchemaSectionText(
     } else if (schemaType === 'array') {
         let itemsType = schema.items && schema.items.type;
 
-        if (!itemsType && schema.items.$ref) {
+        if (!itemsType && schema.items && schema.items.$ref) {
             itemsType = getActualType(schema.items, subSchemas);
         }
 
@@ -53,17 +53,17 @@ function generateSchemaSectionText(
             text.push(`The schema defines an array with all elements of the type \`${itemsType}\`.`);
         } else {
             let validationItems = [];
-
-            if (schema.items.allOf) {
+            const items = schema.items || {};
+            if (items.allOf) {
                 text.push('The elements of the array must match *all* of the following properties:');
                 validationItems = schema.items.allOf;
-            } else if (schema.items.anyOf) {
+            } else if (items.anyOf) {
                 text.push('The elements of the array must match *at least one* of the following properties:');
                 validationItems = schema.items.anyOf;
-            } else if (schema.items.oneOf) {
+            } else if (items.oneOf) {
                 text.push('The elements of the array must match *exactly one* of the following properties:');
                 validationItems = schema.items.oneOf;
-            } else if (schema.items.not) {
+            } else if (items.not) {
                 text.push('The elements of the array must *not* match the following properties:');
                 validationItems = schema.items.not;
             }
