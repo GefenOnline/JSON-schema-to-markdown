@@ -1,8 +1,9 @@
-module.exports = function getActualType(schema, subSchemas) {
+module.exports = function getActualType(schema) {
+  if (Array.isArray(schema.type)) {
+    return schema.type[0];
+  }
   if (schema.type) {
     return schema.type;
-  } else if (schema.$ref && subSchemas[schema.$ref]) {
-    return subSchemas[schema.$ref];
   }
   return undefined;
 };

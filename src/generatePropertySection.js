@@ -28,7 +28,7 @@ function generateSchemaSectionText(
     isRequired, schema, subSchemas,
 ) {
     const schemaType = getActualType(schema, subSchemas);
-    const firstline = (`${generateElementTitle(prefix, name, schemaType, isRequired, schema.enum, schema.example)}`).concat(schema.description ?  ` - ${schema.description}` : '');
+    const firstline = (`${generateElementTitle(prefix, name, schema.type, isRequired, schema.enum, schema.example)}`).concat(schema.description ?  ` - ${schema.description}` : '');
     let text = [
         firstline
     ];

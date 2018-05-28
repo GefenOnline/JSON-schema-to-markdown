@@ -29,3 +29,7 @@ test( 'Enums', () => {
 test( 'Array', () => {
     testFiles('array');
 });
+
+test( 'Array or null type as array', () => {
+    testFiles('arrayOrNull');
+});
